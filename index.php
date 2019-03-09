@@ -1,8 +1,8 @@
 <?php
 
-function __autoload($class)
-{
+spl_autoload_register(function ($class) {
     require_once $class . '.php';
-}
+});
+
 new Client();
 
