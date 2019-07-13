@@ -1,6 +1,6 @@
 <?php
 
-class Subject implements SplSubject
+class Subject extends AbstractSubject
 {
     private $observers;
     private $data;
@@ -10,7 +10,7 @@ class Subject implements SplSubject
         $this->setObservers(new SplObjectStorage());
     }
 
-    public function setData($data)
+    public function setData(string $data)
     {
         $this->data = $data;
     }
@@ -20,6 +20,10 @@ class Subject implements SplSubject
         return $this->data;
     }
 
+    /**
+     * @param SplObjectStorage $observers
+     * @return mixed|void
+     */
     public function setObservers(SplObjectStorage $observers)
     {
         $this->observers = $observers;

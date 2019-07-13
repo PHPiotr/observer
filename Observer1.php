@@ -1,9 +1,9 @@
 <?php
 
-class Observer1 implements SplObserver
+class Observer1 extends AbstractObserver
 {
 
-    public function update(\SplSubject $subject)
+    public function updateData(AbstractSubject $subject)
     {
         echo __CLASS__ . ': ' . $subject->getData();
         echo '<hr />';
